@@ -42,11 +42,11 @@ public class BookController {
     	response.put("code", "NOK");
     	try {
 			String book = request.get("book").toString();
-			String autor = request.get("autor").toString();
+			String author = request.get("author").toString();
 			String year = request.get("year").toString();
 			String comments = request.get("comments").toString();
 			String link = request.get("link").toString();
-    		BookDAO.createBook(book,autor,year,comments,link);
+    		BookDAO.createBook(book,author,year,comments,link);
             response.put("code", "OK");
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -63,12 +63,12 @@ public class BookController {
         try {
             int id = Integer.parseInt(request.get("id").toString());
             String book = request.get("book").toString();
-			String autor = request.get("autor").toString();
+			String author = request.get("author").toString();
 			String year = request.get("year").toString();
 			String comments = request.get("comments").toString();
 			String link = request.get("link").toString();
 
-            Boolean flag = BookDAO.updateBook(id, book,autor,year,comments,link);  
+            Boolean flag = BookDAO.updateBook(id, book,author,year,comments,link);  
             response.put("code", flag);   
         } catch (Exception e) {
             response.put("code", "ERROR" + e);

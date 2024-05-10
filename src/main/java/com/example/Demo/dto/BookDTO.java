@@ -1,60 +1,62 @@
 package com.example.Demo.dto;
 
 public class BookDTO {
-    private int id;
+    private int idBook;
     private String book;
-    private String autor;
+    private String author;
     private String year;
     private String comments;
     private String image;
 
-    public int getId() {
-        return this.id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getIdBook() {
+		return this.idBook;
+	}
 
-    public String getBook() {
-        return this.book;
-    }
+	public void setIdBook(int idBook) {
+		this.idBook = idBook;
+	}
 
-    public void setBook(String book) {
-        this.book = book;
-    }
+	public String getBook() {
+		return this.book;
+	}
 
-    public String getAutor() {
-        return this.autor;
-    }
+	public void setBook(String book) {
+		this.book = book;
+	}
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+	public String getauthor() {
+		return this.author;
+	}
 
-    public String getYear() {
-        return this.year;
-    }
+	public void setauthor(String author) {
+		this.author = author;
+	}
 
-    public void setYear(String year) {
-        this.year = year;
-    }
+	public String getYear() {
+		return this.year;
+	}
 
-    public String getComments() {
-        return this.comments;
-    }
+	public void setYear(String year) {
+		this.year = year;
+	}
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
+	public String getComments() {
+		return this.comments;
+	}
 
-    public String getImage() {
-        return this.image;
-    }
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+	public String getImage() {
+		return this.image;
+	}
 
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+    
 }
 

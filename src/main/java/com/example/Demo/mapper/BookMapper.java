@@ -11,12 +11,12 @@ public class BookMapper implements RowMapper<BookDTO> {
     @Override
     public BookDTO map(ResultSet rs, StatementContext ctx) throws SQLException{
         BookDTO BookDTO=new BookDTO();
-        BookDTO.setId(rs.getInt("id"));
+        BookDTO.setIdBook(rs.getInt("idBook"));
         BookDTO.setBook(rs.getString("book"));
-        BookDTO.setAutor(rs.getString("autor"));
+        BookDTO.setauthor(rs.getString("author"));
         BookDTO.setYear(rs.getString("year"));
         BookDTO.setComments(rs.getString("comments"));
-        BookDTO.setImage(rs.getString("link_image"));
+        BookDTO.setImage(rs.getString("image"));
 
         return BookDTO;
     }
