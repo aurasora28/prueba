@@ -28,9 +28,12 @@ public class BookDAO {
         }
     }
 
-    public long createBook(String book, String author, String year, String comments, String link) throws Exception {
+    public long createBook(String book, String author, int year, String description, String image) throws Exception {
         try (Handle handle = jdbi.open()) {
-            String sql = "INSERT INTO  books (book, author, year, comments, image) VALUES ( '" + book + "'','"+ author + "', '" + year + "','" + comments + "','" + link + "')";
+            book=book.replaceAll("\'", "\''");
+            author=author.replaceAll("\'", "\''");
+            description=description.replaceAll("\'", "\''");
+            String sql = "INSERT INTO  books (book, author, year, description, image) VALUES ( '" + book + "','"+ author + "', '" + year + "','" + description + "','" + image + "')";
             return handle.createUpdate(sql)
                     .executeAndReturnGeneratedKeys()
                     .mapTo(long.class)
@@ -38,18 +41,12 @@ public class BookDAO {
         }
     }
 
-    public Boolean updateBook(int id, String book, String author, String year, String comments, String link) throws Exception{
+    public Boolean updateComment(int idBook, String comments) throws Exception{
         try (Handle handle = jdbi.open()) {
-            String sql = "UPDATE books SET book = '"+book+"',author = '"+author+"',year = '"+year+"',comments = '"+comments+"',image = '"+link+"' WHERE idBook="+id;
+            comments=comments.replaceAll("\'", "\''");
+            String sql = "UPDATE books SET comments = '"+comments+"' WHERE \"idBook\"="+idBook;
+            System.out.println(sql);
             return handle.createUpdate(sql).execute() == 1;
-        }
-    }
-
-    public boolean deleteBook(int id) throws Exception{
-        try (Handle handle = jdbi.open()) {
-            String sql = "DELETE FROM books where idBook="+id;
-            return handle.createUpdate(sql)
-                        .execute()==1;
         }
     }
 

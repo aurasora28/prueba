@@ -1,13 +1,13 @@
 package com.example.Demo.dto;
 
 public class BookDTO {
-    private int idBook;
-    private String book;
-    private String author;
-    private String year;
-    private String comments;
-    private String image;
-
+   	private int idBook;
+	private String book;
+	private String author;
+	private String year;
+	private String description;
+	private String comments;
+	private String image;
 
 	public int getIdBook() {
 		return this.idBook;
@@ -25,11 +25,11 @@ public class BookDTO {
 		this.book = book;
 	}
 
-	public String getauthor() {
+	public String getAuthor() {
 		return this.author;
 	}
 
-	public void setauthor(String author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 
@@ -39,6 +39,14 @@ public class BookDTO {
 
 	public void setYear(String year) {
 		this.year = year;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getComments() {
@@ -57,6 +65,7 @@ public class BookDTO {
 		this.image = image;
 	}
 
+	
     
 }
 

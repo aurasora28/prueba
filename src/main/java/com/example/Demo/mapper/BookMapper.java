@@ -13,8 +13,9 @@ public class BookMapper implements RowMapper<BookDTO> {
         BookDTO BookDTO=new BookDTO();
         BookDTO.setIdBook(rs.getInt("idBook"));
         BookDTO.setBook(rs.getString("book"));
-        BookDTO.setauthor(rs.getString("author"));
+        BookDTO.setAuthor(rs.getString("author"));
         BookDTO.setYear(rs.getString("year"));
+        BookDTO.setDescription(rs.getString("description"));
         BookDTO.setComments(rs.getString("comments"));
         BookDTO.setImage(rs.getString("image"));
 
