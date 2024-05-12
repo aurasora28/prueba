@@ -45,7 +45,6 @@ public class BookDAO {
         try (Handle handle = jdbi.open()) {
             comments=comments.replaceAll("\'", "\''");
             String sql = "UPDATE books SET comments = '"+comments+"' WHERE \"idBook\"="+idBook;
-            System.out.println(sql);
             return handle.createUpdate(sql).execute() == 1;
         }
     }
